@@ -1,7 +1,7 @@
 import gradio as gr
 
 def greet(name, intensity):
-    return "Hello, " + name + " "+ "!" * int(intensity)
+    return "Hello, " + name + " "+ "!" * round(intensity) + str(intensity)
 
 demo = gr.Interface(
     fn=greet,
@@ -9,4 +9,5 @@ demo = gr.Interface(
     outputs=["text"],
 )
 
-demo.launch()
+if __name__ == "__main":
+    demo.launch()
